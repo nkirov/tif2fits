@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menu</class>
+ <widget class="QDialog" name="menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>514</width>
+    <height>248</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tif2fits 3.1/02.07.2012</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>297</width>
+     <height>58</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>List file name:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="list">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>list.txt</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Copyright file name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="copyright">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>project_CdC.txt</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="convert">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>210</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Convert</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="quadratic">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>157</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>x=y, wedge down</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>x&gt;y, wedge down</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>x&lt;y, wedge down</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>x&gt;y, wedge right</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>x&lt;y, wedge right</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>501</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="wedge">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Wedge</string>
+      </property>
+      <widget class="QRadioButton" name="noWedge">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>82</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>No</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="TG13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>82</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TG13</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="TG21s">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>82</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TG21s</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="dotr">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>*r.tif</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="bigimage">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>BigImage</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="twoplates">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>2 plates</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="Transformation">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Transformation</string>
+      </property>
+      <widget class="QCheckBox" name="rotate">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>71</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>rotate</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="flop">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>71</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>flop</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

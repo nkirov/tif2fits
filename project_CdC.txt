@@ -1,0 +1,13 @@
+ Based on photographic data of the Astrophysical Observatory
+ Potsdam obtained using the 32.5 cm photographic refractor at
+ Telegrafenberg in the period 1893-1924 within the framework
+ of the Carte du Ciel project. The plates were digitized using
+ professional flatbed scanners EPSON 10000XL/V700 and processed
+ in the present digital form. The project of plate digitization
+ was funded by a German DFG grant 436 BUL 113/110/0-3 and
+ partially of the grants of Bulgarian Ministry of Education and
+ Science DO-02-273/275.
+ The investigators using these scans are kindly requested to
+ include the above acknowledgements in any publications.
+ Copyright (c) Leibniz Institute for Astrophysics Potsdam.
+ All rights reserved.

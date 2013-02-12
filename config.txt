@@ -1,0 +1,116 @@
+BAM010C001397
++Wedge
+-BigImage
+-*r.tif
+-2 plates
++rotate
+-flop
+Quadratic
+
+BON030C002253
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+BUC016_100986
++Wedge
+-BigImage
++*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic left
+
+BUC038_100387
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+CLU020_100443
++Wedge
+-BigImage
+-*r.tif
++2 plates
+-rotate
+-flop
+Quadratic
+
+CLU050_103348
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+HAR025B050263
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
++flop
+Quadratic
+
+KON060_005018
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+POT015_000317
++Wedge
++BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+POT032_000043E
+-Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+POT080_000099
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+ROZ050_005738
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
+
+ROZ200_000604
++Wedge
+-BigImage
+-*r.tif
+-2 plates
+-rotate
+-flop
+Quadratic
