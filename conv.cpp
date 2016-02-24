@@ -141,12 +141,12 @@ qDebug() << "ERROR 1003";
 
 	char *ch;
 
-	qint64* num4 = new qint64;
+	qint64* num4 = new qint64(0);
         ch = reinterpret_cast<char *>(num4);
 	for (int i = 0; i < 2; i++)
 	{	
 		f.getChar(&ch[0]); f.getChar(&ch[1]); f.getChar(&ch[2]); f.getChar(&ch[3]);
-// qDebug() << "*num4=" << *num4;
+qDebug() << "*num4=" << *num4;
 	}
 
 	image = new uint[*num4/2];

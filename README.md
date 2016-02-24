@@ -14,3 +14,6 @@ The main functions of tif2fits software are:
 
 [N. Kirov, M. Tsvetkov, K. Tsvetkova, Technology for digitization of astronomical photographic plates, In: Proceedings of the 8th Annual International Conference on Computer Science and Education in Computer Science, 5–8 July 2012, Boston, USA, 109-114.]
 (http://nikolay.kirov.be/zip/nkirov_boston_updated.pdf)
+
+
+/Users/nkirov/tif2fits/tif2fits2012.app/Contents/MacOS/tif2fits2012
