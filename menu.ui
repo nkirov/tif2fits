@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
+    <width>602</width>
     <height>248</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Tif2fits 3.1/02.07.2012</string>
+   <string>Tif2fits 4.0/26.02.2016</string>
   </property>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
@@ -70,7 +70,7 @@
        </font>
       </property>
       <property name="text">
-       <string>project_CdC.txt</string>
+       <string>project.txt</string>
       </property>
      </widget>
     </item>
@@ -166,6 +166,9 @@
        <property name="text">
         <string>No</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QRadioButton" name="TG13">
        <property name="geometry">
@@ -180,6 +183,9 @@
         <string>TG13</string>
        </property>
        <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
         <bool>true</bool>
        </property>
       </widget>
@@ -250,26 +256,61 @@
       <property name="title">
        <string>Transformation</string>
       </property>
-      <widget class="QCheckBox" name="rotate">
+      <widget class="QRadioButton" name="rotate">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>30</y>
-         <width>71</width>
-         <height>18</height>
+         <y>80</y>
+         <width>102</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
         <string>rotate</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="flop">
+      <widget class="QRadioButton" name="none">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>70</y>
-         <width>71</width>
-         <height>18</height>
+         <y>20</y>
+         <width>102</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>none</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="flip">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>102</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>flip</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="flop">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>102</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
@@ -282,5 +323,54 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>flip</sender>
+   <signal>clicked()</signal>
+   <receiver>noWedge</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>60</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TG13</sender>
+   <signal>clicked()</signal>
+   <receiver>none</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TG21s</sender>
+   <signal>clicked()</signal>
+   <receiver>none</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

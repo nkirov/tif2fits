@@ -13,7 +13,7 @@ qDebug() << "start Conv";
 
 	cut = menu->wedge();
 	nameCo = menu->copyright();
-	flopp = menu->flop();
+	flopp = menu->flop(); flipp = menu->flip();
 	t.start();   	// time
 
 	if (!readTif()) { qDebug() << "ERROR 1";	return;	}
@@ -25,7 +25,7 @@ qDebug() << "start Conv";
 		hdr2list = hdrlist;
 	}
 	if (!readHdr000(fname)) { qDebug() << "ERROR 2";	return;	}
-	if (!changeHdr()) { qDebug() << "ERROR 3";	return;	}
+    if (!changeHdr()) { qDebug() << "ERROR 3";	return;	}
 /*   ***********************************************************     */
 	if (menu->twoplates())
 	{				 // true for 2 plates in 1 tif + wedge
@@ -52,16 +52,18 @@ qDebug() << "start Conv";
 	}
 	else 					// for images without wedge!!!
 	{					// Bamberg
-		convertHdr();			
-		if (!writeHdr(fname)) { qDebug() << "ERROR 6";	return;	}
-
+            
 //		flop();   	//  for Bamberg - HAR025B050263
-		if (menu->flop()) flop();
+		if (menu->flop()) flop(); if (menu->flip()) flip();
 //		rotate();   	//  for Bamberg - BAM010C001397
-		if (menu->rotate()) rotate();
-
+		if (menu->rotate())
+        {
+            rotate();
+            if (!changeHdr()) { qDebug() << "ERROR 3333";	return;	}
+        }
+        if (!writeHdr(fname)) { qDebug() << "ERROR 6";	return;	}
+        convertHdr();
 		swap();
-		
 		if (!writeFits()) {
 qDebug() << "ERROR 7";	return;
 		}
@@ -257,6 +259,7 @@ void Conv::format(int i)
 // number x in line number n (n=3,4)
 void Conv::changeSize(int x, int n)
 {
+qDebug() << "begin Conv::changeSize " << x;
 	QString s = hdrlist[n];
 	int pos1 = s.indexOf('=');
 	int pos2 = s.indexOf('/');
@@ -264,11 +267,12 @@ void Conv::changeSize(int x, int n)
 	while (field.length() < 20) field = " " + field;
 	s = s.replace(pos1 + 1, pos2 - pos1 - 1, field);
 	hdrlist[n] = s;
+qDebug() << "end Conv::changeSize"; 
 }
 	
 bool Conv::changeHdr()
 {
-qDebug() << "begin Conv::changeHdr";
+qDebug() << "begin Conv::changeHdr" << naxis1 << naxis2;
 // change sizes
 	changeSize(naxis1, 3);	changeSize(naxis2, 4);
 
@@ -314,7 +318,7 @@ qDebug() << "ERROR 504";
 		while (line.length() < 80) line.append(" ");
 		hdrlist << line;
 	}
-qDebug() << "end Conv::changeHdr hdrlist.size()=" << hdrlist.size();
+qDebug() << "end Conv::copyright hdrlist.size()=" << hdrlist.size();
 	return true;
 }
 
@@ -759,7 +763,6 @@ qDebug() << "ERROR";
 	
 	f.close();
 	return true;
-
 }
 /*************************************************/
 bool Conv::writeHdr(QString name)
@@ -783,23 +786,22 @@ qDebug() << "end Conv::writeHdr";
 // for X = Y
 void Conv::rotate()
 {
-qDebug() << "begin Conv::rotate()"; 
+qDebug() << "begin Conv::rotate()";
 	int X = naxis1, Y = naxis2;
 qDebug() << "X=" << X << "  Y=" << Y;
-	uint *image0 = new uint[X*X];
+	uint *image0 = new uint[X*Y];
 qDebug() << "image0=" << image0;
 	if (image0 == NULL)
 	{
 qDebug() << "ERROR image0 == NULL"; 
 	}
-	for (int i=0; i < X; i++)
-	{
-//qDebug() << i;
-		for (int j=0; j < X; j++)
-			image0[i*X + j] = image[(X-j-1)*X + i];
-	}
+    for (int i = 0; i < Y; i++)
+		for (int j = 0; j < X; j++)
+			image0[j*Y + i] = image[i*X + j];
+
 	delete [] image;
 	image = image0;
+    naxis1 = Y; naxis2 = X;
 qDebug() << "end Conv::rotate()"; 
 }
 
@@ -826,4 +828,28 @@ qDebug() << "ERROR image0 == NULL";
 	image = image0;
 qDebug() << "end Conv::flop()"; 
 }
+
+// for X != Y
+void Conv::flip()
+{
+qDebug() << "begin Conv::flip()";
+	int X = naxis1, Y = naxis2;
+qDebug() << "X=" << X << "  Y=" << Y;
+	uint *image0 = new uint[X*Y];
+qDebug() << "image0=" << image0;
+	if (image0 == NULL)
+	{
+qDebug() << "ERROR image0 == NULL";
+	}
+	for (int i=0; i < Y; i++)
+	{
+        //qDebug() << i;
+		for (int j=0; j < X; j++)
+			image0[i*X + j] = image[(Y - i - 1)*X + j];
+	}
+	delete [] image;
+	image = image0;
+qDebug() << "end Conv::flip()"; 
+}
+
 

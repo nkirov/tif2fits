@@ -16,7 +16,7 @@ class Menu : public QDialog
 		bool bigimage() const;
 		bool twoplates() const;
 		bool rotate() const;
-		bool flop() const;
+        bool flop() const; bool flip() const;
 		bool listFiles(QStringList &);
 		int quadratic() const;
 	private:

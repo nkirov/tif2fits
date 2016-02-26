@@ -49,6 +49,9 @@ bool Menu::rotate() const
 bool Menu::flop() const
 {	return ui.flop->isChecked();	}
 
+bool Menu::flip() const
+{	return ui.flip->isChecked();	}
+
 bool Menu::listFiles(QStringList & listf)
 {
 qDebug() << "begin listFiles";

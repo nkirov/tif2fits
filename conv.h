@@ -45,14 +45,14 @@ class Conv
 		QTime t;
 		QDateTime scan_date;
 		int cut;    // 0 - nowedge, 1 - TG13, 2 - TG21s
-		bool flopp;
+		bool flopp, flipp;
 
 		QDateTime dateTimeOBS, dateTimeUT;
 		double exptime;
 		QString sitelong;
 
 		void rotate();
-		void flop();
+		void flop(); void flip();
 		void swap();
 		void swap000(uint*, int);
 		int wedge_width();
