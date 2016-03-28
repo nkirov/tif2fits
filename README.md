@@ -9,6 +9,10 @@ The main functions of tif2fits software are:
 •	rotation and/or flip the plate image,
 •	splitting up two images in case of scanning two small plates together.
 
+For MS Windows add
+CONFIG += console
+in .pro file.
+
 [N. Kirov, M. Tsvetkov, K. Tsvetkova, Software Tools for Digitization of Astronomical Photographic Plates, Serdica Journal of Computing, 6 (1), (2012), 67-76.]
 (http://nikolay.kirov.be/zip/067-076.pdf)
 
